@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>TrailerStop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body-container">
+    <header class="main-header">
+      <a href="#" class="brand-logo">
+      <img src="images/streamstate-logo.png" alt="steamstate logo" id="logo">
+      <div class="brand-name">TrailerStop</div>
+      </a>
+    </header>
+
+    <div class="content">
+    <div class="large-carousel noSelect">
+      <div class="trending-title">
+        <h3>Trending</h3>
+      </div>
+      <a class="switchLeft sliderButton" tabindex="0" onclick="trendingSliderScrollLeft()" onkeyup="trendingSliderScrollLeft()"><</a>
+      <a class="switchRight sliderButton" tabindex="0" onclick="trendingSliderScrollRight()" onkeypress="trendingSliderScrollRight()">></a>
+      <div class="trending">
+        <!-- Trending Data  -->
+      </div>
+
+      
+    </div>
+    <div class="trending-trailer" tabindex="0">
+      
+    </div>
+
+    <div class="carousel noSelect">
+      <div class="title">
+        <h3>Top Picks</h3>
+      </div>
+      <div class="picksForYou" >
+        <!-- Picks For You Data  -->
+      </div>
+
+      <a class="switchLeft sliderButton" tabindex="0" onclick="picksSliderScrollLeft()"><</a>
+      <a class="switchRight sliderButton" tabindex="0" onclick="picksSliderScrollRight()">></a>
+    </div>
+    <div class="picksForYou-trailer" tabindex="0"></div>
+
+    <div class="carousel noSelect">
+      <div class="title">
+        <h3>Action</h3>
+      </div>
+      <div class="action">
+        <!-- Action Data  -->
+      </div>
+      <a class="switchLeft sliderButton" tabindex="0" onclick="actionSliderScrollLeft()"><</a>
+      <a class="switchRight sliderButton" tabindex="0" onclick="actionSliderScrollRight()">></a>
+    </div>
+    <div class="action-trailer" tabindex="0"></div>
+
+    <div class="carousel noSelect">
+      <div class="title">
+        <h3>Comedies</h3>
+      </div>
+      <div class="comedies">
+        <!-- Comedies Data  -->
+      </div>
+
+      <a class="switchLeft sliderButton" tabindex="0" onclick="comediesSliderScrollLeft()"><</a>
+      <a class="switchRight sliderButton" tabindex="0" onclick="comediesSliderScrollRight()">></a>
+    </div>
+    <div class="comedies-trailer" tabindex="0"></div>
+
+    <div class="carousel noSelect">
+      <div class="title">
+        <h3>Science Fiction</h3>
+      </div>
+      <div class="scifi">
+        <!-- Scifi Data  -->
+      </div>
+
+      <a class="switchLeft sliderButton" tabindex="0" onclick="scifiSliderScrollLeft()" onkeyup="scifiSliderScrollLeft()"><</a>
+      <a class="switchRight sliderButton" tabindex="0" onclick="scifiSliderScrollRight()" onkeyup="scifiSliderScrollRight()">></a>
+    </div>
+    <div class="scifi-trailer" tabindex="0"></div>
+
+
+    <div class="carousel noSelect">
+      <div class="title">
+        <h3>Thriller</h3>
+      </div>
+      <div class="thriller">
+        <!-- Scifi Data  -->
+      </div>
+
+      <a class="switchLeft sliderButton" tabindex="0" onclick="thrillerSliderScrollLeft()"><</a>
+      <a class="switchRight sliderButton" tabindex="0" onclick="thrillerSliderScrollRight()">></a>
+    </div>
+    <div class="thriller-trailer" tabindex="0"></div>
+  </div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

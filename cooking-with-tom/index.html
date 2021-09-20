@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking With Tom</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="circle"></div>
+    <header>
+      <a href="#"><img src="images/logo-1.png" class="logo" alt="Cooking with tom logo. Bold letters with surrounding an image of a chef's knife"></a>
+      <div class="toggle" onclick="toggleMenu()"></div>
+      <ul class="navigation">
+        <span id="line"></span>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="textBox">
+        <h2>Dreams of Cooking</h2>
+        <p>Ever since I was kid I loved experimenting in the kitchen! Whether I cooked a tasty dish or an inedible disaster, it was a fantastic way to learn about food and flavor combinations. Now I dream of cooking! Follow my cooking dreams as I find creative ways to learn how to cook the things I like to eat! </p>
+          <a href="#">Learn More</a>
+      </div>
+      <div class="imgBox">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/bagel-video-thumb.png" alt="image of a bagel with caption: best bagel ever"><a href="https://youtu.be/YV5-0WJU__Y" target="_blank">Watch Now</a></div>
+            <div class="swiper-slide"><img src="images/brisket.png" alt="image of smoked brisket"><a href="https://www.youtube.com/watch?v=AavmCYfy21Y" target="_blank">Watch Now</a></div>
+            <div class="swiper-slide"><img src="images/scallops.png" alt="image of pasta and scallops"><a href="https://www.youtube.com/watch?v=_mDEzgDSuCU" target="_blank">Watch Now</a></div>
+            <div class="swiper-slide"><img src="images/chicken.png" alt="image of fried chicken"><a href="https://www.youtube.com/watch?v=aFLFujQNX9s" target="_blank">Watch Now</a></div>
+            <div class="swiper-slide"><img src="images/sandwich.png" alt="image of ice cream sandwiches"><a href="https://www.youtube.com/watch?v=r-spsuc3wmw" target="_blank">Watch Now</a></div>
+            <div class="swiper-slide"><img src="images/cake.png" alt="image of a cake"><a href="https://www.youtube.com/watch?v=Qqq-O5gNmI0" target="_blank">Watch Now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="social-icons">
+      <div class="icon-box">
+        <li><a href="#"><img src="images/youtube.png" alt="YouTube logo icon"></a></li>
+        <span>YouTube</span>
+      </div>
+      <div class="icon-box">
+        <li><a href="#"><img src="images/instagram.png" alt="YouTube logo icon"></a></li>
+        <span>Instagram</span>
+      </div>
+      <div class="icon-box">
+        <li><a href="#"><img src="images/twitter.png" alt="YouTube logo icon"></a></li>
+        <span>Twitter</span>
+      </div>
+      <div class="icon-box">
+        <li><a href="#"><img src="images/facebook.png" alt="YouTube logo icon"></a></li>
+        <span>Facebook</span>
+      </div>
+      <div class="icon-box">
+        <li><a href="#"><img src="images/tictoc.png" alt="YouTube logo icon"></a></li>
+        <span>TicToc</span>
+      </div>
+    </ul>
+  </section>
+  
+  <script src="menuIndicator.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+        
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      loop: true
+    });
+
+    function toggleMenu(){
+      const menuToggle = document.querySelector('.toggle');
+      const nav = document.querySelector('.navigation');
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+  <script type="text/javascript">
+
+  </script>
+</body>
+</html>

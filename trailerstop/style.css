@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  color:white;  
+  background-color: rgba(20, 20, 20, 0.98);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.full-height-grow {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+#logo {
+  width: 5.5rem;
+  height: 3.5rem;
+  margin-left: 1.5rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-name {
+  margin-left: .5rem;
+  transition: .35s ease;
+}
+
+.main-nav ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: .35s ease;
+}
+
+.content {
+  top: 0;
+}
+.main-header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  z-index: 1000;
+  max-width: 1200px;
+  min-width: 300px;
+  background: rgba(20, 20, 20, 0.98);
+}
+
+.main-header.sticky {
+  box-shadow: 0 2px 10px rgba(1,1,1, 0.801);
+}
+
+.trending-title h3{
+  font-weight: 500;
+  color: white;
+  margin: 0 0 0.5em .4em;
+}
+
+.title h3{
+  color: white;
+  font-weight: 500;
+  margin: 3rem 1em -0.2em .4em;
+}
+
+.carousel {
+  margin-top: 1em;
+  height: 250px;
+  width: 95vw;
+  max-width: 1200px;
+  position: relative;
+  background: none;
+}
+
+.large-carousel {
+  margin-top: 10rem;
+  height: 400px;
+  width: 95vw;
+  max-width: 1200px;
+  position: relative;
+  background: none;
+}
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.large-carousel .switchLeft,
+.large-carousel .switchRight {
+  color: white;
+  font-weight: bold;
+  height: 100%;
+  width: 45px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: transparent;
+  font-family: sans-serif;
+  top: 0;
+  z-index: 6;
+  
+}
+
+.switchLeft {
+  margin-top: 25px;
+}
+
+.switchRight {
+  margin-top: 25px;
+}
+
+.large-carousel .switchLeft {
+  position: absolute;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.large-carousel .switchRight {
+  position: absolute;
+  right: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.large-carousel .switchLeft:hover,
+.large-carousel .switchRight:hover,
+.large-carousel .switchLeft:focus,
+.large-carousel .switchRight:focus {
+  background-color: #262626;
+  opacity: 0.5;
+}
+
+.carousel .switchLeft,
+.carousel .switchRight {
+  color: white;
+  font-weight: bold;
+  width: 45px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 25px;
+  text-align: center;
+  background-color: transparent;
+  font-family: sans-serif;
+  top: 0;
+  z-index: 7;
+  
+}
+
+.carousel .switchLeft {
+  position: absolute;
+  /* left: -40px; */
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel .switchRight {
+  position: absolute;
+  right: 0px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel .switchLeft:hover,
+.carousel .switchRight:hover,
+.carousel .switchLeft:hover,
+.carousel .switchRight:hover {
+  background-color: #262626;
+  opacity: 0.5;
+}
+
+
+a:hover, a:focus {
+  cursor: pointer;
+  transition-delay: 1s;
+  transition: ease-in-out;
+}
+
+.action, .comedies, .scifi, .thriller, .picksForYou {
+  height: 250px;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 10px !important;
+  display: flex;
+  align-items: center;
+}
+
+.trending {
+  height: 400px;
+  width: auto;
+  max-width: 1200px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px !important;
+  display: flex;
+  align-items: center;
+}
+
+.trailer-div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: radial-gradient(circle at center, rgb(0, 0, 0) 0, rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.664));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trailer-window{
+  position: relative;
+  max-width: 900px;
+  border: none;
+  background: #000000;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner 1s linear infinite;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  max-width: 32px;
+}
+
+.close:focus {
+  color: #ccc;
+}
+
+@media (max-width: 991px){
+  .trailer-div {
+    max-width: 90%;
+  }
+}
+
+.action img, 
+.comedies img, .scifi img, .thriller img, .picksForYou img {
+  min-width: 147px;
+  height: 200px;
+  background-size: cover;
+  background-color: rgb(208, 212, 208);
+  margin: 5px 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+.trending img{
+  width: 250px;
+  height: 400px;
+  background-size: cover;
+  background-color: rgb(208, 212, 208);
+  margin: 5px 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.container:hover img{
+  transform: scale(1.1);
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.button {
+  position: relative;
+  border-radius: 50px;
+  left: 0;
+  top: -100px;
+  text-align: center;
+  visibility: hidden;
+  transition: visibility .1s ease-in-out;
+}
+
+.button a {
+  width: 50px;
+  padding: 12px 12px;
+  text-align: center;
+  color: white;
+  background-color: #c71d78;
+  border-radius: 100px;
+  z-index: 1;
+  text-decoration: none;
+  transition: .1s ease-in-out;
+}
+
+.container:hover .button, .container:focus .button {
+  visibility: visible;
+}
+
+.button a:hover, .button a:focus {
+  visibility: visible;
+  background-color: white;
+  color: #c71d78;
+}
+
+.number {
+  font-size: 15rem;
+  -webkit-text-fill-color: black; 
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.514);
+  transform: translateX(55px);
+  z-index: -2;
+  margin-left: -2rem;
+  font-weight: 900;
+}

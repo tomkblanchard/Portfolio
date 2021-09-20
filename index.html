@@ -1,0 +1,834 @@
+<!-- Porfolio HTML -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title title="Site Logo">Tom B Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="skip">
+        <a href="#projects"
+          onclick="focusMethod()">Skip to main content</a>
+      </div>
+    <div
+      class="showButton"
+      title="Show Accessibility Options"
+      onfocus="playAudio('showSidebar')"
+      onmouseover="playAudio('showSidebar')"
+      onblur="stopAudio('showSidebar')"
+      onmouseleave="stopAudio('showSidebar')"
+    >
+      A11y >
+    </div>
+    <div class="sideContainer" id="sideHide">
+      <div
+        class="hideBtn"
+        tabindex="0"
+        title="Hide Accessibility Options"
+        onfocus="playAudio('hideSidebar')"
+        onmouseover="playAudio('hideSidebar')"
+        onblur="stopAudio('hideSidebar')"
+        onmouseleave="stopAudio('hideSidebar')"
+      >
+        Hide
+      </div>
+      <div
+        class="sideToggle"
+        onclick="openCloseSideBar()"
+        title="Expand / Collapse"
+        tabindex="0"
+        onfocus="playAudio('openClose')"
+        onmouseover="playAudio('openClose')"
+        onblur="stopAudio('openClose')"
+        onmouseleave="stopAudio('openClose')"
+      ></div>
+      <div class="sideNav">
+        <ul>
+          <li
+            class="navTitle"
+          >
+            Accessibility
+          </li>
+          <li>
+            <div class="sideNavRow">
+              <span class="icon"
+                ><i class="fa fa-audio-description" aria-hidden="true"></i
+              ></span>
+              <span class="settingTitle">Audio Descriptions</span>
+              <label class="switch" id="ad">
+                <input type="checkbox" tabindex="-1" />
+                <span
+                  class="slider round"
+                  id="adSlider"
+                  onclick="enableAudio()"
+                  onfocus="playAudio('audioDescriptions')"
+                  onmouseover="playAudio('audioDescriptions')"
+                  onblur="stopAudio('audioDescriptions')"
+                  onmouseleave="stopAudio('audioDescriptions')"
+                ></span>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="sideNavRow">
+              <span class="icon"
+                ><i class="fa fa-search-plus" aria-hidden="true"></i
+              ></span>
+              <span class="settingTitle">Text Size</span>
+              <div class="buttons">
+                <span
+                  class="tmBtnFirst tmActive"
+                  onclick="decreaseFontSize()"
+                  onfocus="playAudio('decreaseFont')"
+                  onmouseover="playAudio('decreaseFont')"
+                  onblur="stopAudio('decreaseFont')"
+                  onmouseleave="stopAudio('decreaseFont')"
+                  >A</span
+                >
+                <span
+                  class="tmBtn"
+                  onclick="increaseFontSize()"
+                  onfocus="playAudio('increaseFont')"
+                  onmouseover="playAudio('increaseFont')"
+                  onblur="stopAudio('increaseFont')"
+                  onmouseleave="stopAudio('increaseFont')"
+                  >A</span
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="sideNavRow">
+              <span class="icon"><span class="themeChange"></span></span>
+              <span class="settingTitle">Dark Mode</span>
+              <label class="switch" id="dm">
+                <input type="checkbox" tabindex="-1" />
+                <span
+                  class="slider round"
+                  id="themeChangeSlider"
+                  onclick="enableDarkMode()"
+                  onfocus="playAudio('toggleDark')"
+                  onmouseover="playAudio('toggleDark')"
+                  onblur="stopAudio('toggleDark')"
+                  onmouseleave="stopAudio('toggleDark')"
+                ></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header>
+      <a href="#banner" 
+        class="logo"
+        onfocus="playAudio('siteLogo')"
+        onmouseover="playAudio('siteLogo')"
+        onblur="stopAudio('siteLogo')"
+        onmouseleave="stopAudio('siteLogo')"
+        >
+        TB</a>
+      <div 
+        class="menuToggle" 
+        onclick="toggleMenu()"
+        onfocus="navToggleIdPlay()"
+        onmouseover="navToggleIdPlay()"
+        onblur="navToggleIdStop()"
+        onmouseleave="navToggleIdStop()"></div>
+      <ul class="nav noSelect">
+        <li>
+          <a
+            href="#banner"
+            class="navAnchor"
+            style="--i: 1"
+            onclick="navActiveCloseOnClick()"
+            onfocus="playAudio('home')"
+            onmouseover="playAudio('home')"
+            onblur="stopAudio('home')"
+            onmouseleave="stopAudio('home')"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="navAnchor"
+            style="--i: 2"
+            onclick="navActiveCloseOnClick()"
+            onfocus="playAudio('projectsAudio')"
+            onmouseover="playAudio('projectsAudio')"
+            onblur="stopAudio('projectsAudio')"
+            onmouseleave="stopAudio('projectsAudio')"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="navAnchor"
+            style="--i: 3"
+            onclick="navActiveCloseOnClick()"
+            onfocus="playAudio('aboutAudio')"
+            onmouseover="playAudio('aboutAudio')"
+            onblur="stopAudio('aboutAudio')"
+            onmouseleave="stopAudio('aboutAudio')"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="navAnchor"
+            style="--i: 4"
+            onclick="navActiveCloseOnClick()"
+            onfocus="playAudio('contactAudio')"
+            onmouseover="playAudio('contactAudio')"
+            onblur="stopAudio('contactAudio')"
+            onmouseleave="stopAudio('contactAudio')"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <div class="social">
+            <a
+              href="https://www.linkedin.com/in/t-blanchard"
+              target="_blank"
+              onfocus="playAudio('linkedin')"
+              onmouseover="playAudio('linkedin')"
+              onblur="stopAudio('linkedin')"
+              onmouseleave="stopAudio('linkedin')"
+              ><i class="fa fa-linkedin-square" aria-hidden="true"></i
+            ></a>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <section class="banner dark" id="banner">
+      <canvas id="scene"> </canvas>
+      <!-- <div class="stopAnimationContainer">
+        <button onclick="stopAnimation()">Stop Aimation</button>
+      </div> -->
+      <input id="heroText" type="text" value="WELCOME" />
+      <div class="redHalf"></div>
+      <div class="content">
+        <h1
+          onfocus="playAudio('greeting')"
+          onmouseover="playAudio('greeting')"
+          onblur="stopAudio('greeting')"
+          onmouseleave="stopAudio('greeting')"
+        >
+          Hi, I'm Tom - designer / developer with a passion for accessibility!
+          Get it touch if you'd like to chat, and scroll down to see my
+          projects!
+        </h1>
+        <a
+          href="#contact"
+          class="btn"
+          onfocus="playAudio('contactAudio')"
+          onmouseover="playAudio('contactAudio')"
+          onblur="stopAudio('contactAudio')"
+          onmouseleave="stopAudio('contactAudio')"
+          >Contact</a
+        >
+      </div>
+      <div class="arrow">
+        <div class="scroll">Scroll Down</div>
+        <i class="fa fa-long-arrow-down bounce" aria-hidden="true"></i>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <div
+        class="title"
+        onfocus="playAudio('projectsAudio')"
+        onmouseover="playAudio('projectsAudio')"
+        onblur="stopAudio('projectsAudio')"
+        onmouseleave="stopAudio('projectsAudio')"
+      >
+        <h2 class="titleText g" id="porjectTitle"><span>P</span>rojects</h2>
+      </div>
+
+      <div class="content">
+        <div
+          id="project0"
+          class="box"
+          tabindex="0"
+          onclick="window.open('trailerstop/index.html', '_blank')"
+          onfocus="playAudio('trailerHound')"
+          onmouseover="playAudio('trailerHound')"
+          onblur="stopAudio('trailerHound')"
+          onmouseleave="stopAudio('trailerHound')"
+        >
+          <div class="imgBox">
+            <img
+              src="img/ss-thumb.png"
+              id="ss"
+              alt="Streamstate project thumbnail"
+            />
+          </div>
+          <div class="text">
+            <h3 id="ssTitle">TrailerStop</h3>
+
+            <p id="p2">
+              Using HTML, CSS, JS, and The Movie Database API, I had lots of fun
+              developing this responsive web application for watching the latest
+              trailers.
+            </p>
+          </div>
+        </div>
+        <div
+          class="box"
+          tabindex="0"
+          onclick="window.open('cooking-with-tom/index.html', '_blank')"
+          onfocus="playAudio('cwtAudio')"
+          onmouseover="playAudio('cwtAudio')"
+          onblur="stopAudio('cwtAudio')"
+          onmouseleave="stopAudio('cwtAudio')"
+        >
+          <div class="imgBox">
+            <img
+              src="img/cwt-thumb.png"
+              id="cwt"
+              alt="cooking website project thumbnail"
+            />
+          </div>
+          <div class="text">
+            <h3 id="cwtTitle">Cooking Website Design</h3>
+            <p id="p3">
+              One of my other passions is cooking! After starting a small
+              Youtube cooking channel, I decided to mockup a responsive website
+              design to showcase my cooking brand, latest videos, and recipes!
+            </p>
+          </div>
+        </div>
+       
+          <!-- <div 
+            class="box"
+            tabindex="0"
+            onclick="window.open('on-my-own/index.html', '_blank')"
+            onfocus="playAudio('omoAudio')"
+            onmouseover="playAudio('omoAudio')"
+            onblur="stopAudio('omoAudio')"
+            onmouseleave="stopAudio('omoAudio')"
+            >
+            <div class="imgBox">
+              <img src="img/omo-thumb.svg" alt="On my own project thumbnail" />
+            </div>
+            <div class="text">
+              <h3>On My Own (OMO) - UI/UX Design</h3>
+              <p>
+                <b>(In Progress)</b> OMO is a mobile app I conceptualized for people with disabilities to learn and practice independent living skills. This project was inspired by my work supporting people with disabilities who were working towards their goal to live independently. 
+              </p>
+            </div>
+          </div>
+          <div class="box"
+            class="box"
+            onclick="window.open('pictotimer/index.html', '_blank')"
+            onfocus="playAudio('picto')"
+            onmouseover="playAudio('picto')"
+            onblur="stopAudio('picto')"
+            onmouseleave="stopAudio('picto')"
+            >
+            <div class="imgBox">
+              <img src="img/picto-thumb.svg" alt="Picto timer project thumbnail" />
+            </div>
+            <div class="text">
+              <h3>Pictotimer</h3>
+              <p><b>(In Progress)</b> 
+                This project came from a high level design course I took in my major. I worked on a team of
+                four to create design artifacts (including personas, user stories, activity and domain diagrams)
+                for a picter-based timer app for children with autism. 
+              </p>
+            </div>
+          </div> -->
+        <div
+          class="box"
+          tabindex="0"
+          onclick="window.open('tabletop-game/index.html', '_blank')"
+          onfocus="playAudio('tabletop')"
+          onmouseover="playAudio('tabletop')"
+          onblur="stopAudio('tabletop')"
+          onmouseleave="stopAudio('tabletop')"
+        >
+          <div class="imgBox">
+            <img
+              src="img/tabletop-thumb.svg"
+              alt="Tabletop game design project thumbnail"
+            />
+          </div>
+          <div class="text">
+            <h3>Tabletop Game Design</h3>
+            <p>
+              During an interactive media design course, I worked with a team of
+              5 to create a tabletop board game. I was project manager, lead
+              game mechanics designer, and designer / creator of the game board
+              for the final prototype.
+            </p>
+          </div>
+        </div>
+        <div
+          class="box"
+          tabindex="0"
+          onclick="window.open('https://djtechedu.com/paragon-virus/?', '_blank')"
+          onfocus="playAudio('videoGamep')"
+          onmouseover="playAudio('videoGamep')"
+          onblur="stopAudio('videoGamep')"
+          onmouseleave="stopAudio('videoGamep')"
+        >
+          <div class="imgBox">
+            <img
+              src="img/video-thumb.png"
+              alt="Video game project thumbnail"
+            />
+            </button>
+          </div>
+          <div class="text">
+            <h3 id="videoTitle">Video Game Design and Development</h3>
+            <p id="p5">
+              In a video game design course, I worked with 3 team members to
+              design and develop a video game using C++ in the Unity game
+              engine. I was the lead puzzle developer, co level designer, and
+              story writer.
+            </p>
+          </div>
+        </div>
+        <div
+          class="box"
+          tabindex="0"
+          onclick="window.open('email/index.html', '_blank')"
+          onfocus="playAudio('crafters')"
+          onmouseover="playAudio('crafters')"
+          onblur="stopAudio('crafters')"
+          onmouseleave="stopAudio('crafters')"
+        >
+        </a>
+          <div class="imgBox">
+            <img
+              src="img/email-thumb.png"
+              alt="Email development project thumbnail"
+            />
+          </div>
+          <div class="text">
+            <h3 id="emailTitle">Crafters HTML Email</h3>
+            <p id="p4">
+              After learning about the limitations of HTML email design, I
+              wanted to experiment by designing a promotional email for a
+              crafting company with HTML and inline CSS.
+            </p>
+          </div>
+        </div>
+        <!-- <div 
+          class="box"
+          tabindex="0"
+          onfocus="playAudio('juniorDesignsAudio')"
+          onmouseover="playAudio('juniorDesignsAudio')"
+          onblur="stopAudio('juniorDesignsAudio')"
+          onmouseleave="stopAudio('juniorDesignsAudio')">
+          <div class="imgBox">
+            <img src="img/junior-designs.png" alt="Picto timer project thumbnail" />
+          </div>
+          <div class="text">
+            <h3>Junior Designs - Logo Design</h3>
+            <p><b>(In Progress)</b> 
+              This client is an artist who recently started selling his work online, and contracted me to design a logo for his brand.
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="row">
+        <div
+          class="column"
+          id="aboutText"
+          onfocus="playAudio('aboutMe')"
+          onmouseover="playAudio('aboutMe')"
+          onblur="stopAudio('aboutMe')"
+          onmouseleave="stopAudio('aboutMe')"
+        >
+          <h2 class="titleText"><span>A</span>bout Me</h2>
+          <p id="aboutP">
+            After working in mental health and disability
+            services for over 8 years, I decided to make a career change. I wanted to get a tech related degree and use it to continue to support people with disabilities and mental health challenges. Now, after graduating from the University of Washington with a degree
+            in Applied Computing, I am excited to contribute to the world of digital accessibility. 
+            My passion is developing websites and user experiences with accessibility in mind. I have the most
+            experience with HTML, CSS and JavaScript, but I am
+            also familiar with other languages including Java, Python and MySQL; and I have UX Design experience, too. I bring creativity to design
+            challenges, and love to tackle complex problems and collaborate with others!
+          </p>
+          <p id="aboutP">
+            Some of my favorite things to do outside of work are cooking, long
+            boarding, swimming, and training my new German Shepard, Kyra!
+          </p>
+        </div>
+        <div class="column">
+          <div class="imgBox">
+            <img src="img/headshot.png" alt="Image of Tom Blanchard" />
+          </div>
+        </div>
+      </div>
+      <button
+        class="thumbBtn"
+        onfocus="playAudio('downloadResume')"
+        onmouseover="playAudio('downloadResume')"
+        onblur="stopAudio('downloadResume')"
+        onmouseleave="stopAudio('downloadResume')"
+      >
+        <a href="/files/Tom K. Blanchard-Resume.pdf" download>DOWNLOAD RESUME</a>
+      </button>
+    </section>
+    <div class="skillsAd"></div>
+    <div  
+      onfocus="playAudio('skills')"
+      onmouseover="playAudio('skills')"
+      onblur="stopAudio('skills')"
+      onmouseleave="stopAudio('skills')">
+    <div 
+      class="skillsBox"
+    >
+      <h4 class="skillsTitleText"><span>S</span>kills</h4>
+    </div>
+    <div class="skillsIcons">
+      <div class="skillsImgWrap">
+        <img src="img/html-icon.png" alt="HTML Icon" />
+        <h4>HTML 5</h4>
+      </div>
+      <div class="skillsImgWrap">
+        <img src="img/css-icon.png" alt="HTML Icon" />
+        <h4>CSS 3</h4>
+      </div>
+      <div class="skillsImgWrap">
+        <img src="img/js-icon.png" alt="HTML Icon" />
+        <h4>JS</h4>
+      </div>
+    </div>
+    <div class="skillsIcons2">
+      <div class="skillsImgWrap">
+        <img
+          src="img/java-icon.png"
+          alt="HTML Icon"
+          style="border-radius: 50%"
+        />
+        <h4>JAVA</h4>
+      </div>
+      <div class="skillsImgWrap">
+        <img src="img/mysql-icon.png" alt="HTML Icon" />
+        <h4>MY SQL</h4>
+      </div>
+      <div class="skillsImgWrap">
+        <img
+          src="img/ux-icon.png"
+          alt="HTML Icon"
+          style="border-radius: 50%"
+        />
+        <h4>UXD</h4>
+      </div>
+      <div class="skillsImgWrap">
+        <img src="img/figma-icon.png" alt="HTML Icon" />
+        <h4>FIGMA</h4>
+      </div>
+    </div>
+  </div>
+    <section class="contact" id="contact">
+      <div
+        class="title"
+        onfocus="playAudio('letsWork')"
+        onmouseover="playAudio('letsWork')"
+        onblur="stopAudio('letsWork')"
+        onmouseleave="stopAudio('letsWork')"
+      >
+        <h2 class="titleText"><span>L</span>et's Work Together!</h2>
+        <p id="contactP">Send me a message, if you'd like to chat.</p>
+      </div>
+      <form
+        class="contactForm"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+      >
+        <h3 
+          onfocus="playAudio('sendMessage')"
+          onmouseover="playAudio('sendMessage')"
+          onblur="stopAudio('sendMessage')"
+          onmouseleave="stopAudio('sendMessage')"
+        >Send a Message</h3>
+        <div class="inputBox">
+          <label for="name" id="name">Name</label>
+          <input
+            type="text"
+            placeholder="Your Name"
+            onfocus="playAudio('enterName')"
+            onmouseover="playAudio('enterName')"
+            onblur="stopAudio('enterName')"
+            onmouseleave="stopAudio('enterName')"
+          />
+        </div>
+        <div class="inputBox">
+          <label for="email" id="email">Email Address</label>
+          <input
+            type="text"
+            placeholder="example@email.com"
+            onfocus="playAudio('enterEmail')"
+            onmouseover="playAudio('enterEmail')"
+            onblur="stopAudio('enterEmail')"
+            onmouseleave="stopAudio('enterEmail')"
+          />
+        </div>
+        <div class="inputBox">
+          <label for="name" id="message">Message</label>
+          <textarea
+            placeholder="Hello!"
+            onfocus="playAudio('enterMsg')"
+            onmouseover="playAudio('enterMsg')"
+            onblur="stopAudio('enterMsg')"
+            onmouseleave="stopAudio('enterMsg')"
+          ></textarea>
+        </div>
+        <div class="inputBox">
+          <input
+            type="submit"
+            id="send"
+            value="Send"
+            onfocus="playAudio('sendAudio')"
+            onmouseover="playAudio('sendAudio')"
+            onblur="stopAudio('sendAudio')"
+            onmouseleave="stopAudio('sendAudio')"
+          />
+        </div>
+      </form>
+    </section>
+    <!-- <footer>
+        <div class="social"><a href="www.linkedin.com/in/t-blanchard" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+          <a href="www.linkedin.com/in/t-blanchard" class="title">LinkedIn</a>
+        </div>
+      </footer> -->
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/particles.js"></script>
+
+    <!-- Header Audio -->
+    <audio id="home">
+      <source src="audio/home.mp3" type="audio/mp3" />
+      <!-- <source src="audio/home.wav" type="audio/wav">
+      <source src="audio/home.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="siteLogo">
+      <source src="audio/logo.mp3" type="audio/mp3" />
+      <!-- <source src="audio/home.wav" type="audio/wav">
+      <source src="audio/home.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="projectsAudio">
+      <source src="audio/projects.mp3" type="audio/mp3" />
+      <!-- <source src="audio/chord.wav" type="audio/wav">
+      <source src="audio/chord.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="aboutAudio">
+      <source src="audio/about.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="contactAudio">
+      <source src="audio/contact.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="linkedin">
+      <source src="audio/linkedin.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="greeting">
+      <source src="audio/banner-greeting.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="openNav">
+      <source src="audio/open-nav.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="closeNav">
+      <source src="audio/close-nav.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Accessibility Sidebar Audio -->
+    <audio id="hideSidebar">
+      <source src="audio/hide-sidebar.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="showSidebar">
+      <source src="audio/show-sidebar.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="openClose">
+      <source src="audio/open-close-sidebar.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="accessibility">
+      <source src="audio/accessibility.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="audioDescriptions">
+      <source src="audio/toggle-ad.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="decreaseFont">
+      <source src="audio/decrease-font.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="increaseFont">
+      <source src="audio/increase-font.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="toggleDark">
+      <source src="audio/toggle-dark-mode.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Projects Audio -->
+    <audio id="trailerHound">
+      <source src="audio/trailerstop.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="cwtAudio">
+      <source src="audio/cwt.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="crafters">
+      <source src="audio/crafters.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="tabletop">
+      <source src="audio/tabletop.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="videoGamep">
+      <source src="audio/video-game.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="omoAudio">
+      <source src="audio/omo.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="picto">
+      <source src="audio/pictotimer.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="juniorDesignsAudio">
+      <source src="audio/junior-designs.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- About Audio -->
+    <audio id="aboutMe">
+      <source src="audio/about-me.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="downloadResume">
+      <source src="audio/download-resume.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="skills">
+      <source src="audio/skills.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Contact Audio -->
+    <audio id="letsWork">
+      <source src="audio/lets-work-together.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="sendMessage">
+      <source src="audio/send-form.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="enterName">
+      <source src="audio/enter-name.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="enterEmail">
+      <source src="audio/enter-email.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="enterMsg">
+      <source src="audio/enter-msg.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="sendAudio">
+      <source src="audio/send.mp3" type="audio/mp3" />
+      <!-- <source src="audio/horn.wav" type="audio/wav">
+      <source src="audio/horn.ogg" type="audio/ogg"> -->
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>

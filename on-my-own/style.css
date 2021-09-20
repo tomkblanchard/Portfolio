@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  margin: 2rem 3rem;
+  min-width: 300px;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleText span {
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.heroBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(227, 247, 202, .55);
+}
+
+.heroBg img {
+  width: 75%;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4rem;
+}
+
+.project p {
+  width: 100%;
+}
+
+#description {
+  font-weight: 200;
+}
+
+.projectDetails {
+  position: relative;
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.projectDetails span {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.projectDetails p {
+  color: #8a8888;
+}
+
+.role, .timeFrame, .tools {
+  border: rgba(138, 136, 136, .2) 2px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px 2px #ececec;;
+  flex: 1;
+}
+
+.role, .timeFrame {
+  margin-right: 1.5rem;
+}
+
+@media screen and (max-width: 620px) {
+  .project {
+    margin-right: 2rem;
+  }
+
+  .projectDetails {
+    flex-direction: column;
+  }
+  
+  .role, .timeFrame {
+    margin-right: 0;
+  }
+
+  .timeFrame, .tools {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heroBg {
+    flex-direction: column;
+  }
+
+  .heroBg img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* .content {
+    margin: 1rem 0;
+  } */
+
+  .project {
+    margin: 1rem 1rem;
+  }
+
+  section {
+    margin: 1.5rem 1rem;
+  }
+
+  /* .role, .timeFrame, .tools {
+    margin-right: .5rem;
+  } */
+}
+
+section .subContent {
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #5a5a5a;
+}
+
+#process .subContent span {
+  font-size: 200%;
+}
+
