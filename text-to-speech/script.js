@@ -48,7 +48,7 @@ const speak = () => {
   }
   if (textInput.value !== '') {
     // Add sound wave animation to banner 
-    banner.insertAdjacentHTML("beforeend", "<img src='https://res.cloudinary.com/dt45rb7rf/image/upload/v1631715269/giphy-3_gfvbo3.gif' id='secont-img'>");
+    banner.insertAdjacentHTML("beforeend", "<img src='https://res.cloudinary.com/dt45rb7rf/image/upload/v1631715269/giphy-3_gfvbo3.gif' alt='Animation of an audio wave inside of a speech bubble.' id='secont-img'>");
 
     // Get the text to speak
     const speakText = new SpeechSynthesisUtterance(textInput.value);
